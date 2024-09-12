@@ -84,6 +84,16 @@ open class CocoaCollectionViewDiffableDataSource<SectionIdentifierType: Hashable
         return core.indexPath(for: itemIdentifier)
     }
 
+    /// Returns an section index for given section identifier.
+    ///
+    /// - Parameters:
+    ///   - sectionIdentifier: An identifier of section.
+    ///
+    /// - Returns: An section index for given section identifier.
+    public func index(for sectionIdentifier: SectionIdentifierType) -> Int? {
+        return core.index(for: sectionIdentifier)
+    }
+    
     /// Returns the number of sections in the data source.
     ///
     /// - Parameters:

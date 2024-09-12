@@ -100,6 +100,12 @@ final class DiffableDataSourceCore<SectionIdentifierType: Hashable, ItemIdentifi
         return indexPathMap[itemIdentifier]
     }
 
+    func index(for sectionIdentifier: SectionIdentifierType) -> Int? {
+        sections.firstIndex { section in
+            section.differenceIdentifier == sectionIdentifier
+        }
+    }
+    
     func numberOfSections() -> Int {
         return sections.count
     }
